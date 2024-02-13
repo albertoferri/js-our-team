@@ -57,11 +57,17 @@ let teamInfoHTML = "";
 // Ciclo for-in per iterare sugli indici dell'array teamMembers
 for (let key in teamMembers) {
     const member = teamMembers[key];
-    teamInfoHTML += `<div class="col-4 d-flex flex-column align-items-center">
-                        <h2>${member.nome}</h2>
-                        <p>${member.ruolo}</p>
-                        <img src= img/${member.foto} alt=${member.nome}>
-                     </div>`;
+    // BONUS 2:
+    // Organizzare i singoli membri in card/schede
+    teamInfoHTML += `<div class="col-lg-4 col-md-6 col-12 mb-4">
+                        <div class="card">
+                            <img src= img/${member.foto} class="card-img-top" alt="${member.nome}">
+                            <div class="card-body">
+                                <h5 class="card-title">${member.nome}</h5>
+                                <p class="card-text">Ruolo: ${member.ruolo}</p>
+                            </div>
+                        </div>
+                    </div>`;
 }
 
 // Inserimento della stringa HTML nel contenuto dell'elemento #team-info
