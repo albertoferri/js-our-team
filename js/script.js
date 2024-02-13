@@ -49,3 +49,16 @@ const teamMembers = [
         foto: "barbara-ramos-graphic-designer.jpg"
     }
 ];
+
+
+// inizializzo una variabile
+let teamInfoHTML = "";
+
+// Ciclo for-in per iterare sugli indici dell'array teamMembers
+for (let key in teamMembers) {
+    const member = teamMembers[key];
+    teamInfoHTML += `${member.nome} ${member.ruolo} ${member.foto} ${member.nome} <br>`;
+}
+
+// Inserimento della stringa HTML nel contenuto dell'elemento #team-info
+document.getElementById("team-info").innerHTML = teamInfoHTML;
